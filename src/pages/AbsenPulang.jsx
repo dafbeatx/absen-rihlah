@@ -70,6 +70,12 @@ export default function AbsenPulang() {
       <br /><br />
 
       <button onClick={absenPulang}>PULANG</button>
+    return (
+  <div className="container">
+    <h2>Absen Pulang</h2>
+    ...
+  </div>
+);
     </div>
   );
 }

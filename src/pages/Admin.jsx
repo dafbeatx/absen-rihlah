@@ -1,8 +1,38 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase";
 
+if (!authorized) {
+  return (
+    <div className="container">
+      <h2>PIN Admin</h2>
+      <input
+        type="password"
+        value={pin}
+        onChange={(e) => setPin(e.target.value)}
+      />
+      <button onClick={cekPin}>Masuk</button>
+    </div>
+  );
+}
 export default function Admin() {
   const [data, setData] = useState([]);
+  const total = new Set(data.map(d => d.nama)).size;
+const datang = data.filter(d => d.jenis === "datang").length;
+const pulang = data.filter(d => d.jenis === "pulang").length;
+const PIN_ADMIN = "9999";
+
+const [authorized, setAuthorized] = useState(
+  localStorage.getItem("admin") === "ok"
+);
+const [pin, setPin] = useState("");
+const cekPin = () => {
+  if (pin === PIN_ADMIN) {
+    localStorage.setItem("admin", "ok");
+    setAuthorized(true);
+  } else {
+    alert("PIN admin salah");
+  }
+};
 
   useEffect(() => {
     const load = async () => {
@@ -28,6 +58,11 @@ export default function Admin() {
       )}`
     );
   };
+<div className="stats">
+  <div className="card">Total Peserta<br /><b>{total}</b></div>
+  <div className="card">Datang<br /><b>{datang}</b></div>
+  <div className="card">Pulang<br /><b>{pulang}</b></div>
+</div>
 
   return (
     <div>

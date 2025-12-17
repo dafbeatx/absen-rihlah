@@ -1,0 +1,54 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 420px;
+  margin: 40px auto;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+select, input, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
